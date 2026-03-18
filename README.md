@@ -1,22 +1,37 @@
-# AI Research Paper Explainer
+# AI Research Paper Explainer 📄🤖
 
-This is a simple AI-based web application built using Streamlit.
+An AI-powered web app that helps users understand research papers easily by extracting text from PDFs and answering questions based on the content.
 
-## Features
-- Upload research papers (PDF)
-- Extract text from the document
-- Generate AI-based summary (work in progress)
+## 🚀 Features
 
-## Tech Stack
+- Upload any research paper in PDF format
+- Extracts text automatically
+- Ask questions related to the paper
+- AI generates answers based on the document
+
+## 🛠️ Tech Stack
+
 - Python
 - Streamlit
-- PyPDF
 - Transformers (Hugging Face)
+- PyPDF
 
-## Future Improvements
-- Improve summarization accuracy
-- Add question-answering feature
-- Enhance UI/UX
+## 💡 How It Works
 
-## Author
-Ojasvi Sharma
+1. Upload a research paper (PDF)
+2. The app extracts text from the document
+3. Enter your question
+4. AI model processes the text and generates an answer
+
+## 📌 Future Improvements
+
+- Add summarization feature
+- Improve answer accuracy using better models/APIs
+- UI enhancements
+- Support for multiple documents
+
+## ▶️ Run Locally
+
+```bash
+pip install -r requirements.txt
+py -m streamlit run app.py
