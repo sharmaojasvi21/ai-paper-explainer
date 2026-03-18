@@ -18,13 +18,22 @@ if uploaded_file:
     st.subheader("Extracted Text")
     st.write(text[:1000])
 
-    if st.button("Generate Summary"):
+    st.markdown("---")
 
-        generator = pipeline("text-generation", model="gpt2")
+    # -------- Q&A FEATURE --------
+    st.subheader("Ask Questions from the Paper")
 
-        prompt = "Summarize this research paper:\n" + text[:800]
+    question = st.text_input("Enter your question:")
 
-        result = generator(prompt, max_length=200, num_return_sequences=1)
+    if st.button("Get Answer"):
+        if question:
+            generator = pipeline("text-generation", model="gpt2")
 
-        st.subheader("AI Summary")
-        st.write(result[0]['generated_text'])
+            prompt = f"Answer the question based on the text:\n{text[:800]}\nQuestion: {question}"
+
+            result = generator(prompt, max_length=200, num_return_sequences=1)
+
+            st.subheader("Answer")
+            st.write(result[0]['generated_text'])
+        else:
+            st.warning("Please enter a question")
